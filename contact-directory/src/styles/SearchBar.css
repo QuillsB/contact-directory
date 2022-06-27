@@ -1,0 +1,10 @@
+.searchBarContainer {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1vmax;
+}
+
+.searchResultCount {
+  margin: 0;
+  margin-left: 1vmax;
+}

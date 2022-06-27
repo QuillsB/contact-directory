@@ -6,6 +6,7 @@ import '../../styles/Contacts.css';
 
 interface Props {
   contacts: ContactType[]
+  setIsDeveloped: Function
 }
 
 export default function Contacts(props: Props) {
@@ -15,10 +16,15 @@ export default function Contacts(props: Props) {
     ))
   );
 
+  const onButtonClick = (event: React.MouseEvent) => {
+    event.preventDefault();
+    props.setIsDeveloped(true);
+  };
+
   return (
     <div className='contactsContainer'>
       {displayContacts()}
-      <button>Show more</button>
+      <button onClick={onButtonClick}>Show more</button>
     </div>
   );
 }

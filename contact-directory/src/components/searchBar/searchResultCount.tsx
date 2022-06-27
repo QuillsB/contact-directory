@@ -1,9 +1,15 @@
 import React from 'react';
 
-export default function SearchResultCount() {
+interface Props {
+  count: Number,
+}
+
+export default function SearchResultCount(props: Props) {
+  const { count } = props;
+
   return (
     <div>
-      <p>Total: 0</p>
+      <p className='searchResultCount'>{`Total: ${count}`}</p>
     </div>
   );
 }

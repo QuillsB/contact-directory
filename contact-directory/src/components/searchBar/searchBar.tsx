@@ -1,12 +1,21 @@
 import React from 'react';
+import { ContactType } from '../../types/Contact';
 import SearchInput from './searchInput';
 import SearchResultCount from './searchResultCount';
 
-export default function SearchBar() {
+import '../../styles/SearchBar.css';
+
+interface Props {
+  contacts: ContactType[],
+}
+
+export default function SearchBar(props: Props) {
+  const { contacts } = props;
+
   return (
-    <div>
+    <div className='searchBarContainer'>
       <SearchInput />
-      <SearchResultCount />
+      <SearchResultCount count={contacts.length} />
     </div>
   );
 }

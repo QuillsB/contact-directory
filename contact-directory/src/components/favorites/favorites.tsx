@@ -5,7 +5,6 @@ export default function Favorites() {
   return (
     <div>
       <p>Favorites</p>
-      <Contact contact={null} />
     </div>
   );
 }
