@@ -1,9 +1,11 @@
 import React from 'react';
+import SearchBar from '../searchBar/searchBar';
 
 export default function ContactDirectory() {
 	return (
 		<div>
-			<p>My contacts</p>
+			<p>My contact</p>
+			<SearchBar />
 		</div>
 	);
 }
