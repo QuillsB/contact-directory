@@ -9,6 +9,7 @@ import { ContactType } from '../../types/Contact';
 export default function ContactDirectory() {
 	const [contacts, setContacts] = useState<ContactType[]>([]);
 	const [isDeveloped, setIsDeveloped] = useState(false);
+	const [likedContacts, setLikedContacts] = useState<Number[]>([])
 
 	const getContacts = () => {
 		fetch("https://reqres.in/api/users?page=1&delay=1", { "method": "GET" })
@@ -31,14 +32,6 @@ export default function ContactDirectory() {
 
 	useEffect(() => {
 		getContacts();
-	}, []);
-
-	useEffect(() => {
-		getMoreContacts();
-	}, [isDeveloped])
-
-	useEffect(() => {
-		console.log(contacts);
 	});
 
 	return (
@@ -47,10 +40,10 @@ export default function ContactDirectory() {
 			<div className='contactDirectorySearchContainer'>
 				<div className='contactDirectorySearch'>
 					<SearchBar contacts={contacts} />
-					<Contacts contacts={contacts} setIsDeveloped={setIsDeveloped} />
+					<Contacts contacts={contacts} setIsDeveloped={setIsDeveloped} setLike={setLikedContacts} likedContacts={likedContacts} />
 				</div>
 				<div className='contactDirectoryFavorites'>
-					<Favorites />
+					<Favorites contacts={contacts} setLike={setLikedContacts} likedContacts={likedContacts} />
 				</div>
 			</div>
 		</div>

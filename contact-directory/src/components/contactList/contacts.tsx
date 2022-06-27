@@ -7,12 +7,14 @@ import '../../styles/Contacts.css';
 interface Props {
   contacts: ContactType[]
   setIsDeveloped: Function
+  setLike: Function
+  likedContacts: Number[]
 }
 
 export default function Contacts(props: Props) {
   const displayContacts = () => (
     props.contacts.map((contact) => (
-      <Contact key={contact?.id.toString()} contact={contact} />
+      <Contact key={contact?.id.toString()} contact={contact} setLike={props.setLike} likedContacts={props.likedContacts} />
     ))
   );
 
