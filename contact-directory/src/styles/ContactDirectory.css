@@ -1,0 +1,23 @@
+.contactDirectoryContainer {
+  margin-left: 1vmax;
+}
+
+.contactDirectoryTitle {
+  font-size: 2.5vmax;
+  text-decoration: underline;
+}
+
+.contactDirectorySearchContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.contactDirectorySearch {
+  margin-left: 1vmax;
+  width: 50%;
+}
+
+.contactDirectoryFavorites {
+  margin-left: 1vmax;
+  width: 50%;
+}
